@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HarishOS — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ══════════════ BOOT SCREEN ══════════════ -->
+<div id="boot-screen">
+  <div id="boot-logo">
+    <span class="boot-h">H</span><span class="boot-text">arishOS</span>
+    <div id="boot-version">v1.0.0 — Personal Portfolio</div>
+  </div>
+  <div id="boot-log"></div>
+  <div id="boot-bar-wrap"><div id="boot-bar"></div></div>
+</div>
+
+<!-- ══════════════ DESKTOP ══════════════ -->
+<div id="desktop" class="hidden">
+
+  <!-- Wallpaper canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Taskbar -->
+  <div id="taskbar">
+    <div id="taskbar-left">
+      <button class="tb-btn" id="start-btn" onclick="toggleStartMenu()">⊞ HarishOS</button>
+    </div>
+    <div id="taskbar-center" id="open-windows-bar"></div>
+    <div id="taskbar-right">
+      <span id="clock"></span>
+    </div>
+  </div>
+
+  <!-- Start Menu -->
+  <div id="start-menu" class="hidden">
+    <div class="sm-header">
+      <div class="sm-avatar">HR</div>
+      <div>
+        <div class="sm-name">Harish Renganathan</div>
+        <div class="sm-sub">M.Sc. Computer Science</div>
+      </div>
+    </div>
+    <div class="sm-divider"></div>
+    <div class="sm-item" onclick="openWindow('terminal')">⌨ Terminal</div>
+    <div class="sm-item" onclick="openWindow('about')">👤 About Me</div>
+    <div class="sm-item" onclick="openWindow('experience')">💼 Experience</div>
+    <div class="sm-item" onclick="openWindow('projects')">🚀 Projects</div>
+    <div class="sm-item" onclick="openWindow('skills')">🛠 Skills</div>
+    <div class="sm-item" onclick="openWindow('contact')">📬 Contact</div>
+    <div class="sm-divider"></div>
+    <div class="sm-item" onclick="window.open('https://github.com/harish4608443','_blank')">🐙 GitHub</div>
+    <div class="sm-item" onclick="window.open('https://www.linkedin.com/in/harish-renganathan-5879b6137/','_blank')">🔗 LinkedIn</div>
+  </div>
+
+  <!-- Desktop Icons -->
+  <div id="desktop-icons">
+    <div class="d-icon" ondblclick="openWindow('terminal')"><div class="d-icon-img">⌨</div><div class="d-icon-label">Terminal</div></div>
+    <div class="d-icon" ondblclick="openWindow('about')"><div class="d-icon-img">👤</div><div class="d-icon-label">About Me</div></div>
+    <div class="d-icon" ondblclick="openWindow('experience')"><div class="d-icon-img">💼</div><div class="d-icon-label">Experience</div></div>
+    <div class="d-icon" ondblclick="openWindow('projects')"><div class="d-icon-img">🚀</div><div class="d-icon-label">Projects</div></div>
+    <div class="d-icon" ondblclick="openWindow('skills')"><div class="d-icon-img">🛠</div><div class="d-icon-label">Skills</div></div>
+    <div class="d-icon" ondblclick="openWindow('contact')"><div class="d-icon-img">📬</div><div class="d-icon-label">Contact</div></div>
+  </div>
+
+  <!-- Windows Container -->
+  <div id="windows-container"></div>
+
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>
