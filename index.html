@@ -11,80 +11,49 @@
 <body>
 
 <!-- ╔══════════════════════════════════╗ -->
-<!--   TABLE SURFACE                     -->
+<!--   STARFIELD CANVAS (background)     -->
 <!-- ╚══════════════════════════════════╝ -->
-<div id="table">
-  <div id="felt"></div>
-  <div id="table-grain"></div>
+<canvas id="stars"></canvas>
 
-  <!-- ── INTRO CARD (hero, always visible center) ── -->
-  <div id="intro">
-    <div class="intro-avatar">HR</div>
-    <h1 class="intro-name">Harish<br/><em>Renganathan</em></h1>
-    <p class="intro-role" id="tw"><span id="tw-text"></span><span class="tw-cur">|</span></p>
-    <div class="intro-chips">
-      <span>📍 Stuttgart</span>
-      <span>🎓 M.Sc. CS</span>
-      <span>✅ May 2026</span>
+<!-- ── SOLAR SYSTEM STAGE ── -->
+<div id="solar">
+
+  <!-- SUN (center — that's you) -->
+  <div id="sun">
+    <div id="sun-corona"></div>
+    <div id="sun-body">
+      <div id="sun-initials">HR</div>
+      <div id="sun-name">Harish<br/><em>Renganathan</em></div>
+      <div id="sun-role"><span id="tw-text"></span><span class="tw-cur">|</span></div>
     </div>
-    <p class="intro-hint">Pick up a deck below ↓</p>
-  </div>
-
-  <!-- ── DECK AREA ── -->
-  <div id="decks">
-
-    <!-- DECK: About -->
-    <div class="deck-wrap" id="deck-about">
-      <div class="deck-label">About</div>
-      <div class="deck" data-deck="about">
-        <!-- Cards injected by JS -->
-      </div>
-    </div>
-
-    <!-- DECK: Experience -->
-    <div class="deck-wrap" id="deck-experience">
-      <div class="deck-label">Experience</div>
-      <div class="deck" data-deck="experience"></div>
-    </div>
-
-    <!-- DECK: Projects -->
-    <div class="deck-wrap" id="deck-projects">
-      <div class="deck-label">Projects</div>
-      <div class="deck" data-deck="projects"></div>
-    </div>
-
-    <!-- DECK: Skills -->
-    <div class="deck-wrap" id="deck-skills">
-      <div class="deck-label">Skills</div>
-      <div class="deck" data-deck="skills"></div>
-    </div>
-
-    <!-- DECK: Contact -->
-    <div class="deck-wrap" id="deck-contact">
-      <div class="deck-label">Contact</div>
-      <div class="deck" data-deck="contact"></div>
-    </div>
-
-  </div><!-- /decks -->
-
-</div><!-- /table -->
-
-<!-- ── CARD VIEWER (full-screen flip overlay) ── -->
-<div id="viewer" class="hidden">
-  <div id="viewer-scene">
-    <div id="viewer-card">
-      <div class="vc-front" id="vc-front"></div>
-      <div class="vc-back"  id="vc-back"></div>
+    <div id="sun-chips">
+      <span>M.Sc. CS</span>
+      <span>Stuttgart</span>
+      <span>May 2026</span>
     </div>
   </div>
-  <div id="viewer-nav">
-    <button id="nav-prev">←</button>
-    <span id="nav-pos"></span>
-    <button id="nav-next">→</button>
-  </div>
-  <button id="viewer-close">✕</button>
-  <div id="viewer-hint">Click card to flip &nbsp;·&nbsp; ← → to browse</div>
+
+  <!-- ORBITS + PLANETS injected by JS -->
+  <div id="orbits"></div>
+
 </div>
+
+<!-- ── PLANET CARD PANEL (flies in from right) ── -->
+<div id="panel" class="hidden">
+  <button id="panel-close">✕</button>
+  <div id="panel-header">
+    <div id="panel-icon"></div>
+    <div>
+      <div id="panel-category"></div>
+      <div id="panel-title"></div>
+    </div>
+  </div>
+  <div id="panel-body"></div>
+  <div id="panel-tags"></div>
+</div>
+
+<!-- ── HINT ── -->
+<div id="hint">Hover a planet · Click to explore</div>
 
 <script src="os.js"></script>
 </body>
