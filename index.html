@@ -1,130 +1,91 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harish Renganathan — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Harish Renganathan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Reading progress bar -->
-  <div id="progress-bar"></div>
+<!-- ╔══════════════════════════════════╗ -->
+<!--   TABLE SURFACE                     -->
+<!-- ╚══════════════════════════════════╝ -->
+<div id="table">
+  <div id="felt"></div>
+  <div id="table-grain"></div>
 
-  <!-- Floating header (appears after hero) -->
-  <header id="float-nav">
-    <span class="fn-name">Harish R.</span>
-    <nav class="fn-links">
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- ── INTRO CARD (hero, always visible center) ── -->
+  <div id="intro">
+    <div class="intro-avatar">HR</div>
+    <h1 class="intro-name">Harish<br/><em>Renganathan</em></h1>
+    <p class="intro-role" id="tw"><span id="tw-text"></span><span class="tw-cur">|</span></p>
+    <div class="intro-chips">
+      <span>📍 Stuttgart</span>
+      <span>🎓 M.Sc. CS</span>
+      <span>✅ May 2026</span>
+    </div>
+    <p class="intro-hint">Pick up a deck below ↓</p>
+  </div>
 
-  <!-- Side dot navigation -->
-  <aside id="side-nav" aria-label="Section navigation">
-    <button class="sdot active" data-target="hero"       title="Intro"></button>
-    <button class="sdot"        data-target="education"  title="Education"></button>
-    <button class="sdot"        data-target="experience" title="Experience"></button>
-    <button class="sdot"        data-target="projects"   title="Projects"></button>
-    <button class="sdot"        data-target="skills"     title="Skills"></button>
-    <button class="sdot"        data-target="contact"    title="Contact"></button>
-  </aside>
+  <!-- ── DECK AREA ── -->
+  <div id="decks">
 
-  <!-- ═══════════════ SCENE 01 — HERO ═══════════════ -->
-  <section id="hero">
-    <div class="orb orb-a"></div>
-    <div class="orb orb-b"></div>
-    <div class="orb orb-c"></div>
-    <div class="grid-overlay"></div>
-
-    <div class="hero-body">
-      <p class="hero-kicker" data-anim="fade-up" data-delay="0">Hello, world. I'm</p>
-      <h1 class="hero-name" data-anim="fade-up" data-delay="120">
-        Harish<br /><em>Renganathan</em>
-      </h1>
-      <div class="hero-role" data-anim="fade-up" data-delay="300">
-        <span id="tw"></span><span class="tw-cursor">|</span>
-      </div>
-      <div class="hero-chips" data-anim="fade-up" data-delay="480">
-        <span>📍 Stuttgart, Germany</span>
-        <span>🎓 M.Sc. CS · Apr 2026</span>
-        <span>✅ Available May 2026</span>
-      </div>
-      <div class="hero-cta" data-anim="fade-up" data-delay="640">
-        <a href="#contact" class="btn-primary">Get in touch</a>
-        <a href="#experience" class="btn-ghost">See my work ↓</a>
+    <!-- DECK: About -->
+    <div class="deck-wrap" id="deck-about">
+      <div class="deck-label">About</div>
+      <div class="deck" data-deck="about">
+        <!-- Cards injected by JS -->
       </div>
     </div>
 
-    <div class="scroll-nudge" data-anim="fade" data-delay="1100">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
+    <!-- DECK: Experience -->
+    <div class="deck-wrap" id="deck-experience">
+      <div class="deck-label">Experience</div>
+      <div class="deck" data-deck="experience"></div>
     </div>
-  </section>
 
-  <!-- ═══════════════ SCENE 02 — EDUCATION ═══════════════ -->
-  <section id="education" class="chapter">
-    <div class="ch-num" aria-hidden="true">02</div>
-    <div class="ch-inner">
-      <div class="ch-label" data-anim="fade-up">Chapter Two</div>
-      <h2 class="ch-title" data-anim="fade-up" data-delay="80">The Foundation</h2>
-      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Where the story began.</p>
-      <div class="edu-grid" id="edu-grid"></div>
+    <!-- DECK: Projects -->
+    <div class="deck-wrap" id="deck-projects">
+      <div class="deck-label">Projects</div>
+      <div class="deck" data-deck="projects"></div>
     </div>
-  </section>
 
-  <!-- ═══════════════ SCENE 03 — EXPERIENCE ═══════════════ -->
-  <section id="experience" class="chapter">
-    <div class="ch-num" aria-hidden="true">03</div>
-    <div class="ch-inner">
-      <div class="ch-label" data-anim="fade-up">Chapter Three</div>
-      <h2 class="ch-title" data-anim="fade-up" data-delay="80">The Mission</h2>
-      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Building things that matter.</p>
-      <div class="timeline" id="timeline"></div>
+    <!-- DECK: Skills -->
+    <div class="deck-wrap" id="deck-skills">
+      <div class="deck-label">Skills</div>
+      <div class="deck" data-deck="skills"></div>
     </div>
-  </section>
 
-  <!-- ═══════════════ SCENE 04 — PROJECTS ═══════════════ -->
-  <section id="projects" class="chapter">
-    <div class="ch-num" aria-hidden="true">04</div>
-    <div class="ch-inner">
-      <div class="ch-label" data-anim="fade-up">Chapter Four</div>
-      <h2 class="ch-title" data-anim="fade-up" data-delay="80">The Experiments</h2>
-      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Ideas turned into reality.</p>
-      <div class="proj-grid" id="proj-grid"></div>
+    <!-- DECK: Contact -->
+    <div class="deck-wrap" id="deck-contact">
+      <div class="deck-label">Contact</div>
+      <div class="deck" data-deck="contact"></div>
     </div>
-  </section>
 
-  <!-- ═══════════════ SCENE 05 — SKILLS ═══════════════ -->
-  <section id="skills" class="chapter">
-    <div class="ch-num" aria-hidden="true">05</div>
-    <div class="ch-inner">
-      <div class="ch-label" data-anim="fade-up">Chapter Five</div>
-      <h2 class="ch-title" data-anim="fade-up" data-delay="80">The Arsenal</h2>
-      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Tools of the trade.</p>
-      <div class="skills-body" id="skills-body"></div>
+  </div><!-- /decks -->
+
+</div><!-- /table -->
+
+<!-- ── CARD VIEWER (full-screen flip overlay) ── -->
+<div id="viewer" class="hidden">
+  <div id="viewer-scene">
+    <div id="viewer-card">
+      <div class="vc-front" id="vc-front"></div>
+      <div class="vc-back"  id="vc-back"></div>
     </div>
-  </section>
+  </div>
+  <div id="viewer-nav">
+    <button id="nav-prev">←</button>
+    <span id="nav-pos"></span>
+    <button id="nav-next">→</button>
+  </div>
+  <button id="viewer-close">✕</button>
+  <div id="viewer-hint">Click card to flip &nbsp;·&nbsp; ← → to browse</div>
+</div>
 
-  <!-- ═══════════════ SCENE 06 — CONTACT ═══════════════ -->
-  <section id="contact" class="chapter chapter-last">
-    <div class="ch-num" aria-hidden="true">06</div>
-    <div class="ch-inner">
-      <div class="ch-label" data-anim="fade-up">Chapter Six</div>
-      <h2 class="ch-title" data-anim="fade-up" data-delay="80">Let's Connect</h2>
-      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Let's write the next chapter together.</p>
-      <div class="contact-list" id="contact-list"></div>
-      <p class="avail-note" data-anim="fade-up" data-delay="620">
-        🟢&nbsp; Actively seeking full-time roles — available from <strong>May 2026</strong>
-      </p>
-    </div>
-  </section>
-
-  <script src="os.js"></script>
+<script src="os.js"></script>
 </body>
 </html>
