@@ -3,76 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HarishOS — Portfolio</title>
+  <title>Harish Renganathan — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<!-- ══════════════ BOOT SCREEN ══════════════ -->
-<div id="boot-screen">
-  <div id="boot-logo">
-    <span class="boot-h">H</span><span class="boot-text">arishOS</span>
-    <div id="boot-version">v1.0.0 — Personal Portfolio</div>
-  </div>
-  <div id="boot-log"></div>
-  <div id="boot-bar-wrap"><div id="boot-bar"></div></div>
-</div>
+  <!-- Reading progress bar -->
+  <div id="progress-bar"></div>
 
-<!-- ══════════════ DESKTOP ══════════════ -->
-<div id="desktop" class="hidden">
+  <!-- Floating header (appears after hero) -->
+  <header id="float-nav">
+    <span class="fn-name">Harish R.</span>
+    <nav class="fn-links">
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Wallpaper canvas -->
-  <canvas id="bg-canvas"></canvas>
+  <!-- Side dot navigation -->
+  <aside id="side-nav" aria-label="Section navigation">
+    <button class="sdot active" data-target="hero"       title="Intro"></button>
+    <button class="sdot"        data-target="education"  title="Education"></button>
+    <button class="sdot"        data-target="experience" title="Experience"></button>
+    <button class="sdot"        data-target="projects"   title="Projects"></button>
+    <button class="sdot"        data-target="skills"     title="Skills"></button>
+    <button class="sdot"        data-target="contact"    title="Contact"></button>
+  </aside>
 
-  <!-- Taskbar -->
-  <div id="taskbar">
-    <div id="taskbar-left">
-      <button class="tb-btn" id="start-btn" onclick="toggleStartMenu()">⊞ HarishOS</button>
-    </div>
-    <div id="taskbar-center" id="open-windows-bar"></div>
-    <div id="taskbar-right">
-      <span id="clock"></span>
-    </div>
-  </div>
+  <!-- ═══════════════ SCENE 01 — HERO ═══════════════ -->
+  <section id="hero">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="grid-overlay"></div>
 
-  <!-- Start Menu -->
-  <div id="start-menu" class="hidden">
-    <div class="sm-header">
-      <div class="sm-avatar">HR</div>
-      <div>
-        <div class="sm-name">Harish Renganathan</div>
-        <div class="sm-sub">M.Sc. Computer Science</div>
+    <div class="hero-body">
+      <p class="hero-kicker" data-anim="fade-up" data-delay="0">Hello, world. I'm</p>
+      <h1 class="hero-name" data-anim="fade-up" data-delay="120">
+        Harish<br /><em>Renganathan</em>
+      </h1>
+      <div class="hero-role" data-anim="fade-up" data-delay="300">
+        <span id="tw"></span><span class="tw-cursor">|</span>
+      </div>
+      <div class="hero-chips" data-anim="fade-up" data-delay="480">
+        <span>📍 Stuttgart, Germany</span>
+        <span>🎓 M.Sc. CS · Apr 2026</span>
+        <span>✅ Available May 2026</span>
+      </div>
+      <div class="hero-cta" data-anim="fade-up" data-delay="640">
+        <a href="#contact" class="btn-primary">Get in touch</a>
+        <a href="#experience" class="btn-ghost">See my work ↓</a>
       </div>
     </div>
-    <div class="sm-divider"></div>
-    <div class="sm-item" onclick="openWindow('terminal')">⌨ Terminal</div>
-    <div class="sm-item" onclick="openWindow('about')">👤 About Me</div>
-    <div class="sm-item" onclick="openWindow('experience')">💼 Experience</div>
-    <div class="sm-item" onclick="openWindow('projects')">🚀 Projects</div>
-    <div class="sm-item" onclick="openWindow('skills')">🛠 Skills</div>
-    <div class="sm-item" onclick="openWindow('contact')">📬 Contact</div>
-    <div class="sm-divider"></div>
-    <div class="sm-item" onclick="window.open('https://github.com/harish4608443','_blank')">🐙 GitHub</div>
-    <div class="sm-item" onclick="window.open('https://www.linkedin.com/in/harish-renganathan-5879b6137/','_blank')">🔗 LinkedIn</div>
-  </div>
 
-  <!-- Desktop Icons -->
-  <div id="desktop-icons">
-    <div class="d-icon" ondblclick="openWindow('terminal')"><div class="d-icon-img">⌨</div><div class="d-icon-label">Terminal</div></div>
-    <div class="d-icon" ondblclick="openWindow('about')"><div class="d-icon-img">👤</div><div class="d-icon-label">About Me</div></div>
-    <div class="d-icon" ondblclick="openWindow('experience')"><div class="d-icon-img">💼</div><div class="d-icon-label">Experience</div></div>
-    <div class="d-icon" ondblclick="openWindow('projects')"><div class="d-icon-img">🚀</div><div class="d-icon-label">Projects</div></div>
-    <div class="d-icon" ondblclick="openWindow('skills')"><div class="d-icon-img">🛠</div><div class="d-icon-label">Skills</div></div>
-    <div class="d-icon" ondblclick="openWindow('contact')"><div class="d-icon-img">📬</div><div class="d-icon-label">Contact</div></div>
-  </div>
+    <div class="scroll-nudge" data-anim="fade" data-delay="1100">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-  <!-- Windows Container -->
-  <div id="windows-container"></div>
+  <!-- ═══════════════ SCENE 02 — EDUCATION ═══════════════ -->
+  <section id="education" class="chapter">
+    <div class="ch-num" aria-hidden="true">02</div>
+    <div class="ch-inner">
+      <div class="ch-label" data-anim="fade-up">Chapter Two</div>
+      <h2 class="ch-title" data-anim="fade-up" data-delay="80">The Foundation</h2>
+      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Where the story began.</p>
+      <div class="edu-grid" id="edu-grid"></div>
+    </div>
+  </section>
 
-</div>
+  <!-- ═══════════════ SCENE 03 — EXPERIENCE ═══════════════ -->
+  <section id="experience" class="chapter">
+    <div class="ch-num" aria-hidden="true">03</div>
+    <div class="ch-inner">
+      <div class="ch-label" data-anim="fade-up">Chapter Three</div>
+      <h2 class="ch-title" data-anim="fade-up" data-delay="80">The Mission</h2>
+      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Building things that matter.</p>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
 
-<script src="os.js"></script>
+  <!-- ═══════════════ SCENE 04 — PROJECTS ═══════════════ -->
+  <section id="projects" class="chapter">
+    <div class="ch-num" aria-hidden="true">04</div>
+    <div class="ch-inner">
+      <div class="ch-label" data-anim="fade-up">Chapter Four</div>
+      <h2 class="ch-title" data-anim="fade-up" data-delay="80">The Experiments</h2>
+      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Ideas turned into reality.</p>
+      <div class="proj-grid" id="proj-grid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SCENE 05 — SKILLS ═══════════════ -->
+  <section id="skills" class="chapter">
+    <div class="ch-num" aria-hidden="true">05</div>
+    <div class="ch-inner">
+      <div class="ch-label" data-anim="fade-up">Chapter Five</div>
+      <h2 class="ch-title" data-anim="fade-up" data-delay="80">The Arsenal</h2>
+      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Tools of the trade.</p>
+      <div class="skills-body" id="skills-body"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SCENE 06 — CONTACT ═══════════════ -->
+  <section id="contact" class="chapter chapter-last">
+    <div class="ch-num" aria-hidden="true">06</div>
+    <div class="ch-inner">
+      <div class="ch-label" data-anim="fade-up">Chapter Six</div>
+      <h2 class="ch-title" data-anim="fade-up" data-delay="80">Let's Connect</h2>
+      <p class="ch-sub"    data-anim="fade-up" data-delay="160">Let's write the next chapter together.</p>
+      <div class="contact-list" id="contact-list"></div>
+      <p class="avail-note" data-anim="fade-up" data-delay="620">
+        🟢&nbsp; Actively seeking full-time roles — available from <strong>May 2026</strong>
+      </p>
+    </div>
+  </section>
+
+  <script src="os.js"></script>
 </body>
 </html>
