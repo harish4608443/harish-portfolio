@@ -21,9 +21,9 @@ const DATA = {
       company: "Mercedes-Benz AG · Stuttgart",
       date: "May 2025 – Present",
       bullets: [
-        "Developed backend workflows to process vehicle fleet data and support operational use cases.",
-        "Applied machine learning approaches to improve route planning and decision making.",
-        "Improved system efficiency by restructuring data handling and processing logic.",
+        "Building backend workflows that process real-time fleet data from a large vehicle network — mostly Python pipelines with heavy SQL.",
+        "Integrated an ML-based route planning component that feeds into operational decision tools used by internal teams.",
+        "Reworked core data processing logic that had accumulated technical debt, which cut processing time noticeably and made the system easier to maintain.",
       ],
     },
     {
@@ -31,9 +31,9 @@ const DATA = {
       company: "Mercedes-Benz AG · Stuttgart",
       date: "Oct 2024 – Mar 2025",
       bullets: [
-        "Built a backend application and integrated it with cloud services to support internal tools.",
-        "Implemented interfaces between system components and ensured reliable data flow.",
-        "Identified inconsistencies in datasets and improved robustness of processing logic.",
+        "Developed a Flask backend and deployed it on AWS (ECS, ECR, ALB) — handled everything from writing the application to configuring the cloud infrastructure.",
+        "Designed the REST API layer consumed by other internal tools to query and exchange data across system boundaries.",
+        "Traced persistent data quality issues back to inconsistencies at ingestion and fixed them at the source, which improved reliability of downstream reports.",
       ],
     },
     {
@@ -41,9 +41,9 @@ const DATA = {
       company: "Mercedes-Benz AG · Stuttgart",
       date: "Mar 2024 – Sep 2024",
       bullets: [
-        "Developed scripts and workflows to support large-scale data processing tasks.",
-        "Improved performance of existing queries and reduced execution time.",
-        "Supported monitoring and troubleshooting of application workflows.",
+        "Wrote Python scripts and SQL queries to process large datasets through AWS Athena — some tables ran into hundreds of millions of rows.",
+        "Optimised a set of slow-running queries that were causing timeout failures in monitoring dashboards, cutting execution time significantly.",
+        "Supported day-to-day monitoring and helped troubleshoot workflow failures before they escalated.",
       ],
     },
     {
@@ -51,17 +51,17 @@ const DATA = {
       company: "ISW & SimTech · Stuttgart",
       date: "Aug 2023 – Mar 2024",
       bullets: [
-        "Developed software components for research applications in robotics and simulation.",
-        "Contributed to modular and reusable code design.",
+        "Wrote Python tooling for robotics and simulation research at two institutes within Universit\u00e4t Stuttgart.",
+        "Focused on building things modularly so other researchers could pick up and extend the components without touching the internals.",
       ],
     },
   ],
 
   projects: [
-    { emoji: "�", name: "Intelligent View Planning for 3D Scene Reconstruction", year: "2025", desc: "Recommended next-best viewpoints for outdoor scene capture using TSDF volume fusion, ARCore depth estimation, and DNN-based object detection (Barracuda) for real-time scene understanding. NeRF / 3D Gaussian Splatting." },
-    { emoji: "🤟", name: "American Sign Language Detection", year: "2024", desc: "Real-time gesture recognition system using computer vision and machine learning." },
-    { emoji: "🚦", name: "Automatic Traffic Light Controller", year: "2022", desc: "Vision-based system for pedestrian-aware traffic control using object detection." },
-    { emoji: "🏠", name: "Real Estate Price Prediction", year: "2021", desc: "Predictive model to analyze trends in structured datasets." },
+    { emoji: "🧠", name: "Intelligent View Planning for 3D Scene Reconstruction", year: "2025", desc: "Built a system that recommends where to point the camera next during outdoor 3D capture. Used TSDF volume fusion with ARCore for depth and spatial coverage, and a Barracuda DNN for real-time object detection. Integrated with NeRF and 3D Gaussian Splatting pipelines." },
+    { emoji: "🤟", name: "American Sign Language Detection", year: "2024", desc: "Real-time ASL recognition system — detects hand gestures from a live camera feed using OpenCV and a trained ML classifier. Built to work reliably under varied lighting and backgrounds." },
+    { emoji: "🚦", name: "Pedestrian-Aware Adaptive Traffic Signal Control", year: "2022", desc: "Vision-based system that detects vehicles and pedestrians in real time using YOLOv5 and dynamically adjusts signal timings based on lane occupancy — rather than running on fixed cycles." },
+    { emoji: "🏠", name: "Housing Market Analysis & Price Forecasting", year: "2021", desc: "End-to-end ML pipeline covering data cleaning, feature engineering, and model comparison across Random Forest, XGBoost, and linear regression. Wrapped in a Flask interface for querying price estimates." },
   ],
 
   skills: {
