@@ -170,6 +170,14 @@ body {
   text-decoration: none; transition: all 0.2s;
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--text); }
+.btn-cv {
+  padding: 13px 24px; border-radius: 8px;
+  border: 1px solid rgba(200,169,110,0.35);
+  color: var(--accent); font-size: 0.88rem;
+  text-decoration: none; transition: all 0.2s; letter-spacing: 0.3px;
+  background: rgba(200,169,110,0.07);
+}
+.btn-cv:hover { background: rgba(200,169,110,0.14); border-color: var(--accent); transform: translateY(-1px); }
 
 .scroll-nudge {
   position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
@@ -239,7 +247,8 @@ body {
 .edu-card:hover { border-color: rgba(200,169,110,0.3); transform: translateY(-3px); }
 .edu-year   { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); margin-bottom: 12px; }
 .edu-school { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
-.edu-degree { font-size: 0.85rem; color: var(--muted); margin-bottom: 10px; }
+.edu-degree { font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+.edu-spec   { font-size: 0.78rem; color: var(--accent); opacity: 0.8; margin-bottom: 10px; font-family: var(--font-mono); }
 .edu-loc    { font-size: 0.78rem; color: var(--muted); }
 .edu-badge  {
   display: inline-block; margin-top: 14px;

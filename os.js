@@ -11,8 +11,8 @@ const DATA = {
   linkedin: "https://www.linkedin.com/in/harish-renganathan-5879b6137/",
 
   education: [
-    { year: "2023 — 2026", school: "Universität Stuttgart", degree: "M.Sc. Computer Science", loc: "📍 Stuttgart, Germany", badge: true },
-    { year: "2018 — 2022", school: "B.S. Abdur Rahman Crescent University", degree: "B.Tech. Computer Science", loc: "📍 India", badge: false },
+    { year: "2023 — 2026", school: "Universität Stuttgart", degree: "M.Sc. Computer Science", spec: "Specialisation in Autonomous Systems · ML, Deep Learning, Reinforcement Learning, Embedded Systems, Knowledge Graphs", loc: "📍 Stuttgart, Germany", badge: true },
+    { year: "2018 — 2022", school: "B.S. Abdur Rahman Crescent University", degree: "B.Tech. Computer Science", spec: "Specialisation in AI and IoT · in partnership with IBM", loc: "📍 India", badge: false },
   ],
 
   experience: [
@@ -21,9 +21,9 @@ const DATA = {
       company: "Mercedes-Benz AG · Stuttgart",
       date: "May 2025 – Present",
       bullets: [
-        "Building backend workflows that process real-time fleet data from a large vehicle network — mostly Python pipelines with heavy SQL.",
-        "Integrated an ML-based route planning component that feeds into operational decision tools used by internal teams.",
-        "Reworked core data processing logic that had accumulated technical debt, which cut processing time noticeably and made the system easier to maintain.",
+        "Built and maintained Python and SQL backend workflows to process vehicle fleet data for operational reporting and analytics.",
+        "Integrated a machine learning component for route planning into backend services used by internal operations teams.",
+        "Refactored existing data processing logic to reduce execution time and improve overall system stability.",
       ],
     },
     {
@@ -31,9 +31,9 @@ const DATA = {
       company: "Mercedes-Benz AG · Stuttgart",
       date: "Oct 2024 – Mar 2025",
       bullets: [
-        "Developed a Flask backend and deployed it on AWS (ECS, ECR, ALB) — handled everything from writing the application to configuring the cloud infrastructure.",
-        "Designed the REST API layer consumed by other internal tools to query and exchange data across system boundaries.",
-        "Traced persistent data quality issues back to inconsistencies at ingestion and fixed them at the source, which improved reliability of downstream reports.",
+        "Built a Flask-based backend application and deployed it to AWS using ECS, ECR, and ALB.",
+        "Developed REST API endpoints that allowed internal tools to query and exchange data across services.",
+        "Investigated and resolved data quality issues at the ingestion stage to ensure consistent and reliable downstream processing.",
       ],
     },
     {
@@ -41,9 +41,9 @@ const DATA = {
       company: "Mercedes-Benz AG · Stuttgart",
       date: "Mar 2024 – Sep 2024",
       bullets: [
-        "Wrote Python scripts and SQL queries to process large datasets through AWS Athena — some tables ran into hundreds of millions of rows.",
-        "Optimised a set of slow-running queries that were causing timeout failures in monitoring dashboards, cutting execution time significantly.",
-        "Supported day-to-day monitoring and helped troubleshoot workflow failures before they escalated.",
+        "Wrote Python and SQL workflows to run large-scale data queries against multi-terabyte tables via AWS Athena.",
+        "Identified and optimised slow SQL queries that were causing failures in scheduled monitoring workflows.",
+        "Monitored data pipelines and resolved job failures to keep operational dashboards up to date.",
       ],
     },
     {
@@ -51,17 +51,17 @@ const DATA = {
       company: "ISW & SimTech · Stuttgart",
       date: "Aug 2023 – Mar 2024",
       bullets: [
-        "Wrote Python tooling for robotics and simulation research at two institutes within Universit\u00e4t Stuttgart.",
-        "Focused on building things modularly so other researchers could pick up and extend the components without touching the internals.",
+        "Developed Python software components used in robotics and simulation research at ISW and SimTech, Universität Stuttgart.",
+        "Structured the codebase in a modular way so individual components could be extended or replaced without affecting the rest of the system.",
       ],
     },
   ],
 
   projects: [
     { emoji: "🧠", name: "Intelligent View Planning for 3D Scene Reconstruction", year: "2025", desc: "Built a system that recommends where to point the camera next during outdoor 3D capture. Used TSDF volume fusion with ARCore for depth and spatial coverage, and a Barracuda DNN for real-time object detection. Integrated with NeRF and 3D Gaussian Splatting pipelines." },
-    { emoji: "🤟", name: "American Sign Language Detection", year: "2024", desc: "Real-time ASL recognition system — detects hand gestures from a live camera feed using OpenCV and a trained ML classifier. Built to work reliably under varied lighting and backgrounds." },
-    { emoji: "🚦", name: "Pedestrian-Aware Adaptive Traffic Signal Control", year: "2022", desc: "Vision-based system that detects vehicles and pedestrians in real time using YOLOv5 and dynamically adjusts signal timings based on lane occupancy — rather than running on fixed cycles." },
-    { emoji: "🏠", name: "Housing Market Analysis & Price Forecasting", year: "2021", desc: "End-to-end ML pipeline covering data cleaning, feature engineering, and model comparison across Random Forest, XGBoost, and linear regression. Wrapped in a Flask interface for querying price estimates." },
+    { emoji: "🤟", name: "American Sign Language Detection", year: "2024", desc: "Real-time ASL recognition system that detects and classifies hand gestures from a live camera feed using OpenCV and a trained ML classifier. Designed to perform reliably across varied lighting conditions and backgrounds." },
+    { emoji: "🚦", name: "Pedestrian-Aware Adaptive Traffic Signal Control", year: "2022", desc: "Vision-based traffic management system using YOLOv5 to detect vehicles and pedestrians in real time and adjust signal timings dynamically based on live lane occupancy, rather than fixed time cycles." },
+    { emoji: "🏠", name: "Housing Market Analysis & Price Forecasting", year: "2021", desc: "End-to-end ML pipeline covering data cleaning, feature engineering, and model evaluation across Random Forest, XGBoost, and linear regression. Served predictions through a Flask web interface." },
   ],
 
   skills: {
@@ -127,6 +127,7 @@ function renderEducation() {
       <div class="edu-year">${e.year}</div>
       <div class="edu-school">${e.school}</div>
       <div class="edu-degree">${e.degree}</div>
+      ${e.spec ? `<div class="edu-spec">${e.spec}</div>` : ''}
       <div class="edu-loc">${e.loc}</div>
       ${e.badge ? '<div class="edu-badge">Current</div>' : ''}
     </div>
