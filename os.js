@@ -84,9 +84,8 @@ const DATA = {
 // ── Typewriter ────────────────────────────
 const TW_WORDS = [
   "Software Engineer",
-  "Backend Developer",
   "AI / ML Enthusiast",
-  "Data Engineer",
+  "Cloud and DevOps Engineer",
   "M.Sc. Computer Science",
 ];
 let twIdx = 0, twChar = 0, twDeleting = false;
