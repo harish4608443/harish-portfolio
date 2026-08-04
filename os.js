@@ -11,7 +11,7 @@ const DATA = {
   linkedin: "https://www.linkedin.com/in/harish-renganathan-5879b6137/",
 
   education: [
-    { year: "2023 — 2026", school: "Universität Stuttgart", degree: "M.Sc. Computer Science", spec: "Specialisation in Autonomous Systems · ML, Deep Learning, Reinforcement Learning, Embedded Systems, Knowledge Graphs", loc: "📍 Stuttgart, Germany", badge: true },
+    { year: "2023 — 2026", school: "Universität Stuttgart", degree: "M.Sc. Computer Science", spec: "Specialisation in Autonomous Systems · ML, Deep Learning, Reinforcement Learning, Embedded Systems, Knowledge Graphs", loc: "📍 Stuttgart, Germany", badge: "Graduated June 2026" },
     { year: "2018 — 2022", school: "B.S. Abdur Rahman Crescent University", degree: "B.Tech. Computer Science", spec: "Specialisation in AI and IoT · in partnership with IBM", loc: "📍 India", badge: false },
   ],
 
@@ -65,12 +65,12 @@ const DATA = {
   ],
 
   skills: {
-    "Programming":               ["Python", "C++", "SQL", "JavaScript", "TypeScript"],
+    "Programming":               ["Python", "SQL", "JavaScript", "TypeScript", "Bash"],
+    "Data Engineering":          ["ETL Pipelines", "Data Modeling", "Data Warehousing", "Query Optimization", "Batch Processing", "Airflow", "PySpark", "dbt"],
+    "Cloud & DevOps":            ["AWS", "ECS", "ECR", "ALB", "Route 53", "Athena", "IAM", "CloudWatch", "SageMaker", "Azure", "Docker", "Kubernetes", "Terraform", "CI/CD", "GitHub Actions", "Linux", "Monitoring", "Observability"],
     "Frameworks & Libraries":    ["Flask", "React", "OpenCV", "scikit-learn", "TensorFlow", "NumPy", "Pandas"],
-    "AI / ML":                   ["Machine Learning", "Deep Learning", "Computer Vision"],
-    "Cloud":                     ["AWS ECS", "ECR", "ALB", "Route 53", "Athena", "IAM", "CloudWatch", "SageMaker", "Azure"],
-    "Containers & Orchestration":["Docker", "Kubernetes"],
-    "Tools":                     ["Git", "Linux", "CI/CD"],
+    "AI / ML":                   ["Machine Learning", "Deep Learning", "Computer Vision", "MLOps"],
+    "Tools":                     ["Git", "Linux", "CI/CD", "System Design", "Testing"],
   },
 
   contact: [
@@ -129,7 +129,7 @@ function renderEducation() {
       <div class="edu-degree">${e.degree}</div>
       ${e.spec ? `<div class="edu-spec">${e.spec}</div>` : ''}
       <div class="edu-loc">${e.loc}</div>
-      ${e.badge ? '<div class="edu-badge">Current</div>' : ''}
+      ${e.badge ? `<div class="edu-badge">${typeof e.badge === 'string' ? e.badge : 'Current'}</div>` : ''}
     </div>
   `).join('');
 }
